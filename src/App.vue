@@ -16,6 +16,12 @@
   margin: 0;
 }
 
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
 body {
   font-family: 'Nunito', sans-serif;
   font-size: 62.5%;

@@ -2,6 +2,7 @@
 
 ## Project gear
 
+- VueJS
 - VueX
 - Vue router
 

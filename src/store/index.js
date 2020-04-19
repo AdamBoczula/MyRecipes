@@ -9,6 +9,12 @@ export default new Vuex.Store({
   state: {
     recipes: RECIPES,
   },
+  getters: {
+    recipes: (state) => {
+      console.log('state.recipes:', state.recipes);
+      return state.recipes;
+    },
+  },
   mutations: {},
   actions: {},
   modules: {},
