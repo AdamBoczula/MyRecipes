@@ -76,11 +76,6 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 
-  // &:hover {
-  // z-index: 10;
-  // scale: 1.2;
-  // }
-
   &__InformationBar {
     display: flex;
     justify-content: space-between;
@@ -91,6 +86,7 @@ export default {
   }
 
   &__Ingredients {
+    z-index: 100;
     padding: 0.4rem 0;
     color: #efefef;
     font-size: 0.8rem;
@@ -99,6 +95,7 @@ export default {
   }
 
   &--bar {
+    z-index: 100;
     padding: 0.5rem 1rem;
     background-color: #000;
     opacity: 0.6;
@@ -108,14 +105,14 @@ export default {
 
 .reveal {
   width: 256px;
-  -webkit-animation: tmp 0.5s;
+  -webkit-animation: tmp 0.2s forwards;
 }
 
 @-webkit-keyframes tmp {
   0% {
     height: 0;
     background-color: #000;
-    opacity: 0.3;
+    opacity: 0.6;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     top: 331px;
@@ -124,7 +121,7 @@ export default {
     top: 74px;
     height: 256px;
     background-color: #000;
-    opacity: 0.3;
+    opacity: 0.6;
 
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
