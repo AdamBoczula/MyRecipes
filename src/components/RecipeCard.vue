@@ -1,12 +1,13 @@
 <template>
   <transition name="reveal-details">
-    <div
-      class="RecipeCard"
-      @mouseenter="hover = true"
-      @mouseleave="hover = false"
-      :style="{ backgroundImage: `url(${imageUrl})`}"
-    >
-      <div class="RecipeCard__Container" :class="{reveal: hover}">
+    <div class="tmp">
+      <div class="my-animation" :class="{reveal: hover}"></div>
+      <div
+        class="RecipeCard"
+        @mouseenter="hover = true"
+        @mouseleave="hover = false"
+        :style="{ backgroundImage: `url(${imageUrl})`}"
+      >
         <div class="RecipeCard__Name RecipeCard--bar">{{name}}</div>
         <div class="RecipeCard__Ingredients" v-show="hover">
           <ul class="RecipeCard__Ingredients__List">
@@ -53,35 +54,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.my-animation {
+  position: absolute;
+  opacity: 0.7;
+  width: 256px;
+}
+
 .RecipeCard {
   background-repeat: no-repeat;
   background-size: 100%;
-
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  height: 250px;
+
+  height: 256px;
+  width: 256px;
 
   transition: all 0.2s;
 
-  &__Container {
-    display: flex;
+  display: flex;
 
-    flex-direction: column;
-    justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
 
-    padding-top: 1rem;
-
-    height: 100%;
-    width: 100%;
-  }
-  &:hover {
-    z-index: 10;
-    scale: 1.2;
-  }
+  // &:hover {
+  // z-index: 10;
+  // scale: 1.2;
+  // }
 
   &__InformationBar {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__Name {
+    margin-top: 1rem;
   }
 
   &__Ingredients {
@@ -98,23 +104,11 @@ export default {
     opacity: 0.6;
     color: #efefef;
   }
-
-  // .reveal-details-enter-active {
-
-  // }
-
-  // .reveal-details-enter-active {
-  // }
-
-  // .reveal-details-enter,
-  // .reveal-details-leave-to {
-  // }
 }
 
 .reveal {
-  position: relative;
-  height: 0;
-  -webkit-animation: tmp 1s;
+  width: 256px;
+  -webkit-animation: tmp 0.5s;
 }
 
 @-webkit-keyframes tmp {
@@ -122,11 +116,18 @@ export default {
     height: 0;
     background-color: #000;
     opacity: 0.3;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    top: 331px;
   }
   100% {
-    height: 100%;
+    top: 74px;
+    height: 256px;
     background-color: #000;
     opacity: 0.3;
+
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
   }
 }
 </style>
