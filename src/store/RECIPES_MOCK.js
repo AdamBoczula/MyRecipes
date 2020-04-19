@@ -4,7 +4,7 @@ export const RECIPES = [
     id: '0',
     name: 'Racuchy',
     description: 'Pyszne i proste śniadnie na słodko.',
-    difficulty: '2',
+    difficulty: 2,
     ingredients: [
       {
         name: 'banan',
@@ -42,7 +42,7 @@ export const RECIPES = [
         unit: 'łyżeczka',
       },
     ],
-    numberOfMeals: '2',
+    numberOfMeals: 2,
     duration: {
       hour: '0',
       minutes: '30',
@@ -54,7 +54,7 @@ export const RECIPES = [
     id: '1',
     name: 'Placki bananowo owsiane',
     description: 'Pyszne i proste śniadnie na słodko. Płatki owsiane należy zblendować',
-    difficulty: '2',
+    difficulty: 2,
     ingredients: [
       {
         name: 'banan',
@@ -92,7 +92,7 @@ export const RECIPES = [
         unit: 'łyżeczka',
       },
     ],
-    numberOfMeals: '2',
+    numberOfMeals: 2,
     duration: {
       hour: '0',
       minutes: '30',
@@ -108,7 +108,7 @@ export const RECIPES = [
       Jabłko można zetrzeć na dużych oczkach,
       albo pokroić w kostkę, następnie dodać do gorącej ugotowanej kaszy jaglanej,
       a następnie wymieszać z cynamonem.`,
-    difficulty: '2',
+    difficulty: 2,
     ingredients: [
       {
         name: 'jabłko',
@@ -136,7 +136,7 @@ export const RECIPES = [
         unit: 'ml',
       },
     ],
-    numberOfMeals: '2',
+    numberOfMeals: 2,
     duration: {
       hour: '0',
       minutes: '10',
@@ -149,7 +149,7 @@ export const RECIPES = [
     name: 'Budyń Rafaello',
     description: `Pyszna danie na śniadanie i nie tylko. Można użyć zamiast miodu, banana.
       Wszystkie skadniki po ugotowaniu kaszy jaglanej w mleku zblendować i dodać miód lub banana.`,
-    difficulty: '2',
+    difficulty: 2,
     ingredients: [
       {
         name: 'kasza jaglana',
@@ -177,7 +177,7 @@ export const RECIPES = [
         unit: 'g',
       },
     ],
-    numberOfMeals: '2',
+    numberOfMeals: 2,
     duration: {
       hour: '0',
       minutes: '10',
@@ -190,7 +190,7 @@ export const RECIPES = [
     name: 'Budyń Rafaello',
     description: `Pyszna danie na śniadanie i nie tylko. Można użyć zamiast miodu, banana.
       Wszystkie skadniki po ugotowaniu kaszy jaglanej w mleku zblendować i dodać miód lub banana.`,
-    difficulty: '2',
+    difficulty: 2,
     ingredients: [
       {
         name: 'kasza jaglana',
@@ -218,7 +218,7 @@ export const RECIPES = [
         unit: 'g',
       },
     ],
-    numberOfMeals: '2',
+    numberOfMeals: 2,
     duration: {
       hour: '0',
       minutes: '10',

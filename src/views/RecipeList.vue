@@ -12,3 +12,14 @@ export default {
   components: { RecipeListGrid },
 };
 </script>
+
+<style lang="scss" scoped>
+.RecipeList {
+  display: grid;
+
+  grid-gap: 1rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  padding: 1rem;
+}
+</style>

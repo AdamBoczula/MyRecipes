@@ -10,10 +10,7 @@ export default new Vuex.Store({
     recipes: RECIPES,
   },
   getters: {
-    recipes: (state) => {
-      console.log('state.recipes:', state.recipes);
-      return state.recipes;
-    },
+    recipes: (state) => state.recipes,
   },
   mutations: {},
   actions: {},
