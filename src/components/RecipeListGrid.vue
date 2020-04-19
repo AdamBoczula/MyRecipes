@@ -6,6 +6,7 @@
       v-bind:name="recipe.name"
       v-bind:difficulty="recipe.difficulty"
       v-bind:numberOfMeals="recipe.numberOfMeals"
+      :ingredients="recipe.ingredients"
       v-bind:duration="recipe.duration"
       v-bind:imageUrl="recipe.imageUrl"
     ></recipe-card>

@@ -1,6 +1,21 @@
 <template>
-  <div class="RecipeCard" :style="{ backgroundImage: `url(${imageUrl})`}">
+  <div
+    class="RecipeCard"
+    :style="{ backgroundImage: `url(${imageUrl})`}"
+    @mouseenter="hover = true"
+    @mouseleave="hover = false"
+  >
     <div class="RecipeCard__Name RecipeCard--bar">{{name}}</div>
+    <div class="RecipeCard__Ingredients" v-show="hover">
+      <ul class="RecipeCard__Ingredients__List">
+        <li
+          v-for="ingredient in ingredients"
+          :key="ingredient.name"
+          class="RecipeCard__Ingredients__Item"
+        >{{ingredient.name}}</li>
+      </ul>
+    </div>
+
     <div class="RecipeCard__InformationBar RecipeCard--bar">
       <span class="RecipeCard__InformationBar__Duration">
         <i class="fa fa-clock-o"></i>
@@ -21,8 +36,14 @@ export default {
     name: String,
     difficulty: Number,
     numberOfMeals: Number,
+    ingredients: Array,
     duration: Object,
     imageUrl: String,
+  },
+  data() {
+    return {
+      hover: false,
+    };
   },
 };
 </script>
@@ -43,12 +64,24 @@ export default {
 
   justify-content: space-between;
 
-  // &__Name {
-  // }
+  transition: all 0.2s;
+
+  &:hover {
+    z-index: 10;
+    scale: 1.2;
+  }
 
   &__InformationBar {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__Ingredients {
+    padding: 0.4rem 0;
+    color: #efefef;
+    font-size: 0.8rem;
+    height: 200px;
+    overflow-y: auto;
   }
 
   &--bar {
