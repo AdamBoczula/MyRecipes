@@ -1,0 +1,9 @@
+{
+  "env": {
+    "es6": true
+  },
+  "semi": true,
+  "singleQuote": true,
+  "extends": ["eslint:recommended", "prettier"],
+  "endOfLine": "lf"
+}
