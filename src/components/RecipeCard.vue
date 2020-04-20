@@ -1,6 +1,6 @@
 <template>
-  <transition name="reveal-details">
-    <div class="tmp">
+  <div class="u-pos-rel">
+    <div class="reveal">
       <div class="my-animation" :class="{reveal: hover}"></div>
       <div
         class="RecipeCard"
@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script>
@@ -58,8 +58,47 @@ export default {
 <style lang="scss" scoped>
 .my-animation {
   position: absolute;
-  opacity: 0.7;
   width: 256px;
+  opacity: 0.6;
+}
+
+// move it to utilities by adding webpack configuration
+.u-pos-rel {
+  position: relative;
+}
+
+.reveal {
+  width: 256px;
+  -webkit-animation: reveal 0.2s forwards;
+}
+
+@-webkit-keyframes reveal {
+  0% {
+    height: 0;
+    background-color: #000;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    top: 256px;
+  }
+  100% {
+    top: 0;
+    height: 256px;
+    background-color: #000;
+
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+}
+
+.show-ingredients-enter-active {
+  transition: opacity 0.4s;
+}
+.show-ingredients-leave-active {
+  transition: opacity 0.2s;
+}
+.show-ingredients-enter,
+.show-ingredients-leave-to {
+  opacity: 0;
 }
 
 .RecipeCard {
@@ -103,41 +142,5 @@ export default {
     opacity: 0.6;
     color: #efefef;
   }
-}
-
-.reveal {
-  width: 256px;
-  -webkit-animation: tmp 0.2s forwards;
-}
-
-@-webkit-keyframes tmp {
-  0% {
-    height: 0;
-    background-color: #000;
-    opacity: 0.6;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    top: 331px;
-  }
-  100% {
-    top: 74px;
-    height: 256px;
-    background-color: #000;
-    opacity: 0.6;
-
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-  }
-}
-
-.show-ingredients-enter-active {
-  transition: opacity 0.4s;
-}
-.show-ingredients-leave-active {
-  transition: opacity 0.2s;
-}
-.show-ingredients-enter,
-.show-ingredients-leave-to {
-  opacity: 0;
 }
 </style>
