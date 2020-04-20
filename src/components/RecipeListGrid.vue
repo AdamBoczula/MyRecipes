@@ -1,15 +1,6 @@
 <template>
   <div class="RecipeList">
-    <recipe-card
-      v-for="recipe in getRecipes"
-      :key="recipe.id"
-      :name="recipe.name"
-      :difficulty="recipe.difficulty"
-      :numberOfMeals="recipe.numberOfMeals"
-      :ingredients="recipe.ingredients"
-      :duration="recipe.duration"
-      :imageUrl="recipe.imageUrl"
-    ></recipe-card>
+    <recipe-card v-for="recipe in getRecipes" :key="recipe.id" :recipe="recipe"></recipe-card>
   </div>
 </template>
 

@@ -8,11 +8,17 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     recipes: RECIPES,
+    selectedRecipe: null,
   },
   getters: {
     recipes: (state) => state.recipes,
+    getSelectedRecipe: (state) => state.selectedRecipe,
   },
-  mutations: {},
+  mutations: {
+    selectRecipe(state, newSelectedRecipe) {
+      state.selectedRecipe = newSelectedRecipe;
+    },
+  },
   actions: {},
   modules: {},
 });

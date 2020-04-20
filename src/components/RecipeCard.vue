@@ -7,13 +7,13 @@
   >
     <div class="reveal">
       <div class="reveal-animation-trigger" :class="{reveal: hover}"></div>
-      <div class="RecipeCard" :style="{ backgroundImage: `url(${imageUrl})`}">
-        <div class="RecipeCard__Name RecipeCard--bar">{{name}}</div>
+      <div class="RecipeCard" :style="{ backgroundImage: `url(${recipe.imageUrl})`}">
+        <div class="RecipeCard__Name RecipeCard--bar">{{recipe.name}}</div>
         <transition name="show-ingredients">
           <div class="RecipeCard__Ingredients" v-show="hover">
             <ul class="RecipeCard__Ingredients__List">
               <li
-                v-for="ingredient in ingredients"
+                v-for="ingredient in recipe.ingredients"
                 :key="ingredient.name"
                 class="RecipeCard__Ingredients__Item"
               >{{ingredient.name}}</li>
@@ -24,11 +24,11 @@
         <div class="RecipeCard__InformationBar RecipeCard--bar">
           <span class="RecipeCard__InformationBar__Duration">
             <i class="fa fa-clock-o"></i>
-            {{duration.hour}}h {{duration.minutes}}m
+            {{recipe.duration.hour}}h {{recipe.duration.minutes}}m
           </span>
           <span class="RecipeCard__InformationBar__NumberOfMeals">
             <i class="fa fa-users"></i>
-            {{numberOfMeals}}
+            {{recipe.numberOfMeals}}
           </span>
         </div>
       </div>
@@ -37,15 +37,20 @@
 </template>
 
 <script>
+import { MUTATIONS } from '@/store/mutations';
+
 export default {
   name: 'RecipeCard',
   props: {
-    name: String,
-    difficulty: Number,
-    numberOfMeals: Number,
-    ingredients: Array,
-    duration: Object,
-    imageUrl: String,
+    recipe: {
+      id: String,
+      name: String,
+      difficulty: Number,
+      numberOfMeals: Number,
+      ingredients: Array,
+      duration: Object,
+      imageUrl: String,
+    },
   },
   data() {
     return {
@@ -61,10 +66,7 @@ export default {
   },
   methods: {
     selectRecipe() {
-      console.log('hej');
-      // save selectedRecipe state in store.
-      // that will provide RecipeListGrid (or other component) to new view (router)
-      // with read only state your recipe.
+      this.$store.commit(MUTATIONS.SELECT_RECIPE, this.recipe);
     },
   },
 };
