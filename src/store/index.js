@@ -12,7 +12,7 @@ export default new Vuex.Store({
   },
   getters: {
     recipes: (state) => state.recipes,
-    getSelectedRecipe: (state) => state.selectedRecipe,
+    selectedRecipe: (state) => state.selectedRecipe,
   },
   mutations: {
     selectRecipe(state, newSelectedRecipe) {

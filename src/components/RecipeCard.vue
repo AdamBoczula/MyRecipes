@@ -67,6 +67,7 @@ export default {
   methods: {
     selectRecipe() {
       this.$store.commit(MUTATIONS.SELECT_RECIPE, this.recipe);
+      this.$router.push({ name: 'Recipe' });
     },
   },
 };
