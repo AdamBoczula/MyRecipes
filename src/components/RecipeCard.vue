@@ -9,15 +9,17 @@
         :style="{ backgroundImage: `url(${imageUrl})`}"
       >
         <div class="RecipeCard__Name RecipeCard--bar">{{name}}</div>
-        <div class="RecipeCard__Ingredients" v-show="hover">
-          <ul class="RecipeCard__Ingredients__List">
-            <li
-              v-for="ingredient in ingredients"
-              :key="ingredient.name"
-              class="RecipeCard__Ingredients__Item"
-            >{{ingredient.name}}</li>
-          </ul>
-        </div>
+        <transition name="show-ingredients">
+          <div class="RecipeCard__Ingredients" v-show="hover">
+            <ul class="RecipeCard__Ingredients__List">
+              <li
+                v-for="ingredient in ingredients"
+                :key="ingredient.name"
+                class="RecipeCard__Ingredients__Item"
+              >{{ingredient.name}}</li>
+            </ul>
+          </div>
+        </transition>
 
         <div class="RecipeCard__InformationBar RecipeCard--bar">
           <span class="RecipeCard__InformationBar__Duration">
@@ -126,5 +128,16 @@ export default {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
   }
+}
+
+.show-ingredients-enter-active {
+  transition: opacity 0.4s;
+}
+.show-ingredients-leave-active {
+  transition: opacity 0.2s;
+}
+.show-ingredients-enter,
+.show-ingredients-leave-to {
+  opacity: 0;
 }
 </style>
