@@ -134,6 +134,8 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 
+  cursor: pointer;
+
   &__InformationBar {
     display: flex;
     justify-content: space-between;
