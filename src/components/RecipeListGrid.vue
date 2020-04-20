@@ -2,13 +2,13 @@
   <div class="RecipeList">
     <recipe-card
       v-for="recipe in getRecipes"
-      v-bind:key="recipe.id"
-      v-bind:name="recipe.name"
-      v-bind:difficulty="recipe.difficulty"
-      v-bind:numberOfMeals="recipe.numberOfMeals"
+      :key="recipe.id"
+      :name="recipe.name"
+      :difficulty="recipe.difficulty"
+      :numberOfMeals="recipe.numberOfMeals"
       :ingredients="recipe.ingredients"
-      v-bind:duration="recipe.duration"
-      v-bind:imageUrl="recipe.imageUrl"
+      :duration="recipe.duration"
+      :imageUrl="recipe.imageUrl"
     ></recipe-card>
   </div>
 </template>

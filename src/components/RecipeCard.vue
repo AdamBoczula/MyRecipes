@@ -1,13 +1,13 @@
 <template>
-  <div class="u-pos-rel">
+  <div
+    class="u-pos-rel"
+    @click="selectRecipe"
+    @mouseenter="hover = true"
+    @mouseleave="hover = false"
+  >
     <div class="reveal">
       <div class="reveal-animation-trigger" :class="{reveal: hover}"></div>
-      <div
-        class="RecipeCard"
-        @mouseenter="hover = true"
-        @mouseleave="hover = false"
-        :style="{ backgroundImage: `url(${imageUrl})`}"
-      >
+      <div class="RecipeCard" :style="{ backgroundImage: `url(${imageUrl})`}">
         <div class="RecipeCard__Name RecipeCard--bar">{{name}}</div>
         <transition name="show-ingredients">
           <div class="RecipeCard__Ingredients" v-show="hover">
@@ -51,6 +51,11 @@ export default {
     return {
       hover: false,
     };
+  },
+  methods: {
+    selectRecipe() {
+      console.log('hej');
+    },
   },
 };
 </script>
