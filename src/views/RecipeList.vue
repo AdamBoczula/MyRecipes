@@ -18,7 +18,7 @@ export default {
   display: grid;
 
   grid-gap: 1rem 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
 
   padding: 1rem;
 }

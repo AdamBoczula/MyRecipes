@@ -1,7 +1,7 @@
 <template>
   <div class="u-pos-rel">
     <div class="reveal">
-      <div class="my-animation" :class="{reveal: hover}"></div>
+      <div class="reveal-animation-trigger" :class="{reveal: hover}"></div>
       <div
         class="RecipeCard"
         @mouseenter="hover = true"
@@ -56,7 +56,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.my-animation {
+.reveal-animation-trigger {
   position: absolute;
   width: 256px;
   opacity: 0.6;
@@ -69,9 +69,26 @@ export default {
 
 .reveal {
   width: 256px;
+  animation: reveal 0.2s forwards;
   -webkit-animation: reveal 0.2s forwards;
 }
+@keyframes reveal {
+  0% {
+    height: 0;
+    background-color: #000;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    top: 256px;
+  }
+  100% {
+    top: 0;
+    height: 256px;
+    background-color: #000;
 
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+}
 @-webkit-keyframes reveal {
   0% {
     height: 0;
