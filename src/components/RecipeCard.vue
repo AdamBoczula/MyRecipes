@@ -1,6 +1,6 @@
 <template>
   <div
-    class="u-pos-rel"
+    class="u-pos-rel animation-created"
     @click="selectRecipe"
     @mouseenter="hover = true"
     @mouseleave="hover = false"
@@ -50,11 +50,21 @@ export default {
   data() {
     return {
       hover: false,
+      visible: false,
     };
+  },
+  created() {
+    this.visible = true;
+  },
+  destroyed() {
+    this.visible = false;
   },
   methods: {
     selectRecipe() {
       console.log('hej');
+      // save selectedRecipe state in store.
+      // that will provide RecipeListGrid (or other component) to new view (router)
+      // with read only state your recipe.
     },
   },
 };
@@ -75,8 +85,8 @@ export default {
 .reveal {
   width: 256px;
   animation: reveal 0.2s forwards;
-  -webkit-animation: reveal 0.2s forwards;
 }
+
 @keyframes reveal {
   0% {
     height: 0;
@@ -90,25 +100,8 @@ export default {
     height: 256px;
     background-color: #000;
 
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-  }
-}
-@-webkit-keyframes reveal {
-  0% {
-    height: 0;
-    background-color: #000;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    top: 256px;
-  }
-  100% {
-    top: 0;
-    height: 256px;
-    background-color: #000;
-
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
   }
 }
 
@@ -122,6 +115,20 @@ export default {
 .show-ingredients-leave-to {
   opacity: 0;
 }
+
+// .visible-enter-active,
+// .visible-leave-active {
+//   transition: all 2s;
+// }
+// .visible-enter {
+//   opacity: 0;
+//   transform: translateX(-100px);
+// }
+
+// .visible-leave-to {
+//   opacity: 1;
+//   transform: translateX(100px);
+// }
 
 .RecipeCard {
   background-repeat: no-repeat;
@@ -165,6 +172,21 @@ export default {
     background-color: #000;
     opacity: 0.6;
     color: #efefef;
+  }
+}
+
+.animation-created {
+  animation: created 0.3s forwards;
+}
+
+@keyframes created {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 </style>
