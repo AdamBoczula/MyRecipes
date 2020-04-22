@@ -17,8 +17,9 @@ export default {
 .RecipeList {
   display: grid;
 
-  grid-gap: 1rem 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+  row-gap: 5rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 
   padding: 1rem;
 }

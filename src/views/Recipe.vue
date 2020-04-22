@@ -1,7 +1,23 @@
 <template>
   <div class="Recipe">
-    <br />
-    Przepis to {{ selectedRecipe.name }}
+    <h2 class="RecipenName">{{ selectedRecipe.name }}</h2>
+    <div class="Recipe__Container">
+      <div class="Recipe__Img" :style="{ backgroundImage: `url(${selectedRecipe.imageUrl})`}"></div>
+      <div class="Recipe__Information">
+        <h3>{{ selectedRecipe.description }}</h3>
+        <div class="Recipe__Ingredients">
+          <h3>Składniki:</h3>
+          <ul>
+            <li
+              v-for="ingredient in selectedRecipe.ingredients"
+              :key="ingredient.name"
+            >{{ingredient.name}} {{ingredient.quantity}} {{ingredient.unit}}</li>
+          </ul>
+        </div>
+        <div class="Recipe__Duration">Czas przygotowania (ikona)</div>
+        <div class="Recipe__NumberOfMeals">Ilość osób (ikona)</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -23,5 +39,25 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.Recipe {
+  padding: 5rem;
+
+  &__Container {
+    display: flex;
+  }
+
+  &__Img {
+    min-width: 512px;
+    min-height: 512px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+  }
+
+  &__Information {
+    padding: 3rem;
+  }
+}
 </style>

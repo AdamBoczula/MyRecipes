@@ -76,7 +76,7 @@ export default {
 <style lang="scss" scoped>
 .reveal-animation-trigger {
   position: absolute;
-  width: 256px;
+  width: 300px;
   opacity: 0.6;
 }
 
@@ -86,7 +86,7 @@ export default {
 }
 
 .reveal {
-  width: 256px;
+  width: 300px;
   animation: reveal 0.2s forwards;
 }
 
@@ -96,11 +96,11 @@ export default {
     background-color: #000;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    top: 256px;
+    top: 300px;
   }
   100% {
     top: 0;
-    height: 256px;
+    height: 300px;
     background-color: #000;
 
     border-top-left-radius: 0.6rem;
@@ -119,28 +119,14 @@ export default {
   opacity: 0;
 }
 
-// .visible-enter-active,
-// .visible-leave-active {
-//   transition: all 2s;
-// }
-// .visible-enter {
-//   opacity: 0;
-//   transform: translateX(-100px);
-// }
-
-// .visible-leave-to {
-//   opacity: 1;
-//   transform: translateX(100px);
-// }
-
 .RecipeCard {
   background-repeat: no-repeat;
   background-size: 100%;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 
-  height: 256px;
-  width: 256px;
+  height: 300px;
+  width: 300px;
 
   transition: all 0.2s;
 
@@ -148,6 +134,9 @@ export default {
 
   flex-direction: column;
   justify-content: space-between;
+
+  background-position: center;
+  background-size: cover;
 
   cursor: pointer;
 
