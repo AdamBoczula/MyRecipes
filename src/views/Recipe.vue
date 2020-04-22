@@ -1,6 +1,6 @@
 <template>
   <div class="Recipe">
-    <h2 class="RecipenName">{{ selectedRecipe.name }}</h2>
+    <h2 class="Recipe__Name">{{ selectedRecipe.name }}</h2>
     <div class="Recipe__Container">
       <div class="Recipe__Img" :style="{ backgroundImage: `url(${selectedRecipe.imageUrl})`}"></div>
       <div class="Recipe__Information">
@@ -43,6 +43,11 @@ export default {
 .Recipe {
   padding: 5rem;
 
+  &__Name {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
   &__Container {
     display: flex;
   }
@@ -57,7 +62,8 @@ export default {
   }
 
   &__Information {
-    padding: 3rem;
+    margin: 0 auto;
+    padding: 2rem;
   }
 }
 </style>
